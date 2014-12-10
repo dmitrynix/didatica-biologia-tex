@@ -5,6 +5,7 @@ all:
 	$(COMMAND)
 	$(COMMAND)
 	$(COMMAND)
+	pdflatex atividade.tex
 	make clean
 
 clean:
@@ -18,3 +19,7 @@ talk:
 	rm -f index.pdf
 	make 1>/dev/null 2>/dev/null
 	evince --page-index 1 --presentation index.pdf 2>/dev/null
+
+copy:
+	cp index.pdf ~/Dropbox/Public/didatica-biologia.pdf
+	cp atividade.pdf ~/Dropbox/Public/didatica-atividade.pdf
