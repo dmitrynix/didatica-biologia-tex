@@ -2,7 +2,9 @@ OUTPUT = fundamentos-resumo
 COMMAND= pdflatex -shell-escape -interaction=nonstopmode index.tex
 
 all:
+	sed '/url =/s/url =/howpublished ={\\url/g; /howpublished =/s/},/}},/g;/note/d' ExportedItems.bib > Items.bib
 	$(COMMAND)
+	bibtex index
 	$(COMMAND)
 	$(COMMAND)
 	pdflatex atividade.tex
